@@ -1,0 +1,7 @@
+.titulo {
+    margin-left: 10px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+}

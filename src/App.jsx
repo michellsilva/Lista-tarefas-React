@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import Header from './components/Header';
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -40,12 +41,22 @@ const App = () => {
     setTasks(newTasks);
   }
 
+  const handleTaskRemoveItem = (taskId) => {
+    const newTasks = tasks.filter(t => t.id !== taskId);
+
+    setTasks(newTasks);
+  }
+
   return (
     <>
       <div className="container">
-        <h1>Minhas tarefas</h1>
-        <AddTask handleTaskAdditem={handleTaskAdditem}/>
-        <Tasks tasks={tasks} handleTaskClick={handleTaskClick}/>
+        <Header/>
+        <AddTask handleTaskAdditem={handleTaskAdditem} />
+        <Tasks
+          tasks={tasks}
+          handleTaskClick={handleTaskClick}
+          handleTaskRemoveItem={handleTaskRemoveItem}
+        />
       </div>
     </>
   );
