@@ -11,7 +11,7 @@ const App = () => {
       completed: false
     },
     {
-      id: '1',
+      id: '2',
       title: 'limpar o banheiro',
       completed: false
     }
@@ -30,12 +30,22 @@ const App = () => {
     setTasks(newTasks);
   }
 
+  const handleTaskClick = (taskId) => {
+    const newTasks = tasks.map((t) => {
+      if (t.id === taskId) return { ...t, completed: !t.completed }
+
+      return t;
+    });
+
+    setTasks(newTasks);
+  }
+
   return (
     <>
       <div className="container">
         <h1>Minhas tarefas</h1>
         <AddTask handleTaskAdditem={handleTaskAdditem}/>
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} handleTaskClick={handleTaskClick}/>
       </div>
     </>
   );
