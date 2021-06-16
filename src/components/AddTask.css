@@ -6,7 +6,8 @@
 
 .add-task-input {
     height: 35px;
-    padding: 0 10px;
+    margin-top: 3px;
+    padding: 0px 10px;
     border-radius:  5px;
     border-color: darkorange;
     flex: 2;

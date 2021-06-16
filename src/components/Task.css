@@ -12,9 +12,18 @@
     cursor: pointer;
 }
 
-.remove-task-button {
+.button-container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.remove-task-button,
+.detail-task-button
+ {
     background-color: darkorange;
     border: none;
     font-size: 16px;
     cursor: pointer;
+    padding-left: 10px;
 }

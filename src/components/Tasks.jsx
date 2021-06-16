@@ -6,6 +6,7 @@ const Tasks = ({tasks, handleTaskClick, handleTaskRemoveItem}) => {
         <>
             {tasks.map((t) => (
                 <Task
+                    key={t.id}
                     task={t}
                     handleTaskClick={handleTaskClick}
                     handleTaskRemoveItem={handleTaskRemoveItem}
